@@ -1,0 +1,53 @@
+block vars
+  -path = ""
+  -pageID = ""
+  -pageTitle = ""
+  -pageDescription = ""
+  -pageKeywords = ""
+  -siteUrl = "https://example.com"
+  -siteName = "My Website"
+doctype html
+include ../_mixins/all
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="HandheldFriendly", content="True")
+    meta(name="MobileOptimized", content="320")
+    meta(name="format-detection", content="telephone=no")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    //[if IE]><meta http-equiv="cleartype" content="on"><![endif]
+    meta#viewport(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(name="description", content=pageDescription)
+    meta(name="keywords", content=pageKeywords)
+    meta(name="theme-color", content="#ffffff")
+    
+    // SEO & Open Graph Meta Tags
+    link(rel="canonical", href=`${siteUrl}${path}`)
+    meta(property="og:site_name", content=siteName)
+    meta(property="og:title", content=pageTitle)
+    meta(property="og:description", content=pageDescription)
+    meta(property="og:type", content="website")
+    meta(property="og:url", content=`${siteUrl}${path}`)
+    meta(property="og:image", content=`${siteUrl}/img/og-image.jpg`)
+    meta(name="twitter:card", content="summary_large_image")
+    
+    title=pageTitle
+    
+    // Resource Hints for Performance
+    link(rel="preconnect", href="https://cdnjs.cloudflare.com", crossorigin)
+    
+    if(["top"].includes(pageID))
+      link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css")
+    link(rel="stylesheet" href=`${path}/css/${pageID.replace(/-/gi,'_')}.css`)
+  body
+    .container
+      include ../_parts/header
+      main
+        block container
+      include ../_parts/footer
+      
+    // Deferred Scripts for PageSpeed
+    script(defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js")
+    if(["top"].includes(pageID))
+      script(defer src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js")
+    script(defer src=path+"/js/scripts.js")

@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+$viewport-width: 1250px;
+$wrapper-width: 1200px;
+$font-sans:
+  system-ui,
+  -apple-system,
+  blinkmacsystemfont,
+  "Segoe UI",
+  roboto,
+  "Helvetica Neue",
+  arial,
+  sans-serif;
+$font-serif: georgia, "Times New Roman", times, serif;
+$font-size-pc: 0.14rem;
+$font-size-sp: 0.14rem;
+$font-weight-pc: 400;
+$font-weight-sp: 400;
+$line-height: calc(24 / 14);
+$color-default: #000;
+$color-white: #fff;
