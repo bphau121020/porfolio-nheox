@@ -101,9 +101,7 @@
                         return false;
                     }
                 }
-                catch (e) {
-                    // Fail silently for invalid selectors
-                }
+                catch (e) { }
                 return true;
             };
             setTimeout(() => {
@@ -174,15 +172,22 @@
                 }
             });
         };
+        new WOW({
+            animateClass: 'animate__animated',
+            offset: 0,
+            mobile: true,
+            live: true
+        }).init();
         const loadWebFonts = () => {
             const script = document.createElement('script');
-            script.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+            script.src =
+                'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
             script.async = true;
             script.onload = () => {
                 if ('WebFont' in window) {
                     window.WebFont.load({
                         google: {
-                            families: ['Roboto:400,500,700']
+                            families: ['Roboto:400,500,700', 'Cormorant+Garamond: 400']
                         }
                     });
                 }

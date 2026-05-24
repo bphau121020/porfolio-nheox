@@ -23,6 +23,7 @@
     <title>My Website | Home</title>
     <!-- Resource Hints for Performance-->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/top.css">
   </head>
@@ -49,41 +50,35 @@
       </header>
       <div class="overlay-common"></div>
       <main>
-        <section class="hero">
-          <div class="hero__inner">
-            <h1 class="hero__title">Welcome to My Website</h1>
-            <p class="hero__desc">We provide modern and optimized solutions.</p>
-            <picture>
-              <source srcset="./img/top/hero-banner.webp" type="image/webp"><img class="hero__img" src="./img/top/hero-banner.jpg" alt="Hero Banner" loading="lazy" decoding="async">
-            </picture>
+        <div class="section-top-hero decoration-common">
+          <div class="wrapper"> 
+            <div class="section-top-hero_content"> <img class="object-common" src="./img/top/hero_img_01.png" width="992" height="987" alt="porfolio" loading="eager"></div>
+            <div class="section-top-hero_decoration">
+              <div class="section-top-hero_decoration-item is-first"> <img class="object-common" src="./img/top/hero_img_05.png" width="184" height="183" alt="Star" loading="eager"></div>
+              <div class="section-top-hero_decoration-item is-second"> <img class="object-common" src="./img/top/hero_img_03.png" width="178" height="174" alt="Flower" loading="eager"></div>
+              <div class="section-top-hero_decoration-item is-third"> <img class="object-common" src="./img/top/hero_img_02.png" width="296" height="256" alt="Notice" loading="eager"></div>
+              <div class="section-top-hero_decoration-item is-fourth"> <img class="object-common" src="./img/top/hero_img_04.png" width="255" height="158" alt="Camera" loading="eager"></div>
+            </div>
           </div>
-        </section>
-        <section class="features">
-          <div class="features__inner">
-            <h2 class="features__title">Our Features</h2>
-            <ul class="features__list">
-              <li class="features__item">
-                <picture>
-                  <source srcset="./img/common/icon-speed.webp" type="image/webp"><img class="features__icon" src="./img/common/icon-speed.png" alt="Speed Icon" loading="lazy" decoding="async">
-                </picture>
-                <h3>Fast Performance</h3>
-                <p>Optimized for PageSpeed Insights with WebP and deferred scripts.</p>
-              </li>
-              <li class="features__item">
-                <picture>
-                  <source srcset="./img/common/icon-seo.webp" type="image/webp"><img class="features__icon" src="./img/common/icon-seo.png" alt="SEO Icon" loading="lazy" decoding="async">
-                </picture>
-                <h3>SEO Friendly</h3>
-                <p>Built-in support for Open Graph, Twitter Cards, and semantic HTML.</p>
-              </li>
-            </ul>
+        </div>
+        <div class="section-top-about decoration-common">
+          <div class="wrapper">
+            <div class="section-top-about_detail wow animate__fadeInUp">
+              <p>Hiện tại, em đang theo đuổi lĩnh vực Content Marketing trong ngành F&amp;B với hơn 1 năm kinh nghiệm xây dựng nội dung trên các nền tảng số. Em tập trung vào việc phát triển hình ảnh thương hiệu, truyền tải thông điệp một cách nhất quán và nâng cao trải nghiệm khách hàng thông qua nội dung sáng tạo.</p>
+              <p>Xuất phát từ nền tảng Du lịch &amp; Khách sạn tại Đại học Duy Tân, em sở hữu tư duy dịch vụ cùng khả năng thấu hiểu khách hàng, từ đó ứng dụng hiệu quả vào quá trình làm marketing. Bên cạnh đó, em cũng được đào tạo về content đa kênh, chiến lược nội dung và nhận diện thương hiệu, với định hướng phát triển trở thành một Marketer có tư duy chiến lược và khả năng khai thác insight thông qua nội dung.</p>
+            </div>
+            <div class="section-top-about_image wow animate__fadeInUp" data-wow-delay="0.5s">
+              <figure class="section-top-about_image-wrapper"><img class="object-common" src="./img/top/about_img_01.jpg" width="496" height="496" alt="Diem Quynh" loading="lazy"></figure>
+              <p class="section-top-about_image-description">Diễm Quỳnh</p>
+            </div>
           </div>
-        </section>
+        </div>
       </main>
       <footer class="footer-common hidden"></footer>
     </div>
     <!-- Deferred Scripts for PageSpeed-->
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
     <script defer src="./js/scripts.js"></script>
   </body>

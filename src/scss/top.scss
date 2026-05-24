@@ -2,3 +2,293 @@
 @use "_base/base" as *;
 @use "_parts/header";
 @use "_parts/footer";
+
+.section-top-hero {
+  background: url("../img/top/hero_banner.jpg") center center / cover no-repeat;
+
+  .wrapper {
+    position: relative;
+  }
+
+  &_decoration {
+    &-item {
+      position: absolute;
+
+      &.is-first {
+        animation: rotateSlowly 10s linear infinite;
+      }
+
+      &.is-second {
+        animation: swayLeftRight 4s ease-in-out infinite;
+      }
+
+      &.is-third {
+        animation: floatDiagonal 5s ease-in-out infinite;
+      }
+
+      &.is-fourth {
+        animation: floatUpDown 3s ease-in-out infinite;
+      }
+    }
+  }
+
+  &_content {
+    margin: 0 auto;
+  }
+
+  @include desktop {
+    padding-top: 0.94rem;
+
+    &_content {
+      width: 9.92rem;
+      height: 9.87rem;
+    }
+
+    &_decoration {
+      &-item {
+        &.is-first {
+          top: 0.81rem;
+          left: -0.97rem;
+          width: 1.84rem;
+          height: 1.83rem;
+        }
+
+        &.is-second {
+          top: 1.03rem;
+          right: -1.64rem;
+          width: 1.78rem;
+          height: 1.74rem;
+        }
+
+        &.is-third {
+          bottom: 0;
+          left: -1.79rem;
+          width: 2.96rem;
+          height: 2.56rem;
+        }
+
+        &.is-fourth {
+          right: -1.9rem;
+          bottom: 1.2rem;
+          width: 2.55rem;
+          height: 1.58rem;
+        }
+      }
+    }
+  }
+
+  @include mobile {
+    padding-top: 1rem;
+
+    &_content {
+      width: 3rem;
+      height: auto;
+    }
+
+    &_decoration {
+      &-item {
+        &.is-first {
+          top: -0.32rem;
+          left: 0;
+          width: 0.74rem;
+          height: 0.73rem;
+        }
+
+        &.is-second {
+          top: -0.4rem;
+          right: 0;
+          width: 0.71rem;
+          height: 0.7rem;
+        }
+
+        &.is-third {
+          bottom: 0;
+          left: 0;
+          width: 1.18rem;
+          height: 1.02rem;
+        }
+
+        &.is-fourth {
+          right: 0;
+          bottom: 0.2rem;
+          width: 1.02rem;
+          height: 0.63rem;
+        }
+      }
+    }
+  }
+}
+
+.section-top-about {
+  background: url("../img/top/about_banner.jpg") center center / cover no-repeat;
+
+  .wrapper {
+    position: relative;
+    z-index: 11;
+  }
+
+  &_detail {
+    position: relative;
+    background-color: #f4f3e6;
+    color: #49654e;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.2;
+
+    p {
+      margin-bottom: 0.28rem;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &_image-description {
+    margin-bottom: 0;
+    color: #49654e;
+    font-family: "Cormorant Garamond", serif;
+    line-height: 1;
+  }
+
+  &_image {
+    display: flex;
+    gap: 0.2rem;
+    align-items: center;
+    background: url("../img/top/about_img_02.png") center / 100% auto no-repeat;
+  }
+
+  &_image-wrapper {
+    position: relative;
+  }
+
+  @include desktop {
+    padding-top: 0.35rem;
+
+    &_detail {
+      max-width: 9.66rem;
+      margin-left: -0.96rem;
+      padding: 0.91rem 1.34rem 1.14rem 1.49rem;
+      font-size: 0.22rem;
+    }
+
+    &_image-description {
+      font-size: 0.64rem;
+    }
+
+    &_image {
+      justify-content: space-between;
+      width: 9.67rem;
+      height: 5.51rem;
+      margin-top: -0.9rem;
+      margin-right: -0.1rem;
+      margin-left: auto;
+      padding: 0.37rem 0.49rem 0.18rem 0.56rem;
+    }
+
+    &_image-wrapper {
+      width: 4.96rem;
+      height: 4.96rem;
+    }
+  }
+
+  @include mobile {
+    padding: 0.4rem 0;
+
+    &_detail {
+      margin-bottom: 0.4rem;
+      padding: 0.2rem;
+    }
+
+    &_image {
+      position: relative;
+      flex-direction: column;
+      width: 100%;
+      padding-bottom: 2.64rem;
+      background-position: top center;
+      background-size: 100% 0.8rem;
+    }
+
+    &_image-wrapper {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 2rem;
+      height: 2rem;
+      transform: translateX(-50%);
+      border: 2px solid #ffffff;
+    }
+
+    &_image-description {
+      font-size: 0.33rem;
+      margin-top: 0.21rem;
+    }
+  }
+}
+
+.decoration-common {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    background: url("../img/common/blur_img.png") center / cover no-repeat;
+    pointer-events: none;
+  }
+}
+
+@keyframes floatUpDown {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes swayLeftRight {
+
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(5deg);
+  }
+
+  75% {
+    transform: rotate(-5deg);
+  }
+}
+
+@keyframes floatDiagonal {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(10px, -10px);
+  }
+}
+
+@keyframes rotateSlowly {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

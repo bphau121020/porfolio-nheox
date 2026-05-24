@@ -14,7 +14,7 @@ html {
   }
 
   @include desktop {
-    font-size: 625%;
+    font-size: calc(100vw / 19.2);
   }
 
   @include mobile {
@@ -90,7 +90,7 @@ svg {
 
 .wrapper {
   @include desktop {
-    width: calc(100% - 60px);
+    width: calc(100% - 0.6rem);
     max-width: $wrapper-width;
     margin-right: auto;
     margin-left: auto;

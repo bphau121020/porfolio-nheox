@@ -1,3 +1,5 @@
+declare const WOW: any;
+
 (() => {
   const spBreak = 767.98;
 
@@ -120,10 +122,7 @@
           $('body, html').animate({ scrollTop: position }, speed, 'swing');
           return false;
         }
-      } catch (e) {
-
-        // Fail silently for invalid selectors
-      }
+      } catch (e) {}
       return true;
     };
 
@@ -205,6 +204,13 @@
     });
   };
 
+  new WOW({
+    animateClass: 'animate__animated',
+    offset: 0,
+    mobile: true,
+    live: true
+  }).init();
+
   const loadWebFonts = (): void => {
     const script = document.createElement('script');
     script.src =
@@ -214,7 +220,7 @@
       if ('WebFont' in window) {
         (window as any).WebFont.load({
           google: {
-            families: [ 'Roboto:400,500,700' ]
+            families: [ 'Roboto:400,500,700', 'Cormorant+Garamond: 400' ]
           }
         });
       }
